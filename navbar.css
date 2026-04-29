@@ -1,0 +1,232 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg,rgb(52, 93, 189) 0%, #060139 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.navbar{
+    background: whitesmoke;
+    box-shadow:0 2px 20px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    height: 70px;
+}
+
+.navbar .logo{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: rgb(12, 3, 69);
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.navbar .nav-links{
+    display: flex;
+    list-style: none;
+}
+
+.navbar .nav-links li{
+    margin-left: 2rem;
+}
+
+.navbar .nav-links a{
+    color: #333;
+    text-decoration: none;
+    font-weight:500;
+    font-size: 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+}
+
+.navbar .nav-links a::after{
+    content: '';
+    position: absolute;
+    bottom:0;
+    left:0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, rgb(52, 93, 189), #120975 );
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-links a:hover::after {
+    width: 100%;
+}
+
+.navbar .nav-links a:hover{
+    color: rgb(218, 37, 5);
+    transform: translateY(-2px);
+}
+
+.navbar .nav-links a.active{
+    color: rgb(218, 37, 5);
+}
+
+.navbar .nav-links a.active::after{
+    width: 100%;
+}
+
+.content{
+    padding: 2rem;
+    margin-top: 90px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content p{
+    color: white;
+}
+
+.hero{
+    text-align: center;
+    padding: 4rem 2rem;
+    background: rgb(88, 199, 9);
+    border-radius: 30px;
+    margin-bottom: 2rem;
+    backdrop-filter: blur(10px);
+}
+
+.hero h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.hero p{
+    font-size: 1.2rem;
+    color: white;
+    line-height: 1.6;
+}
+
+.hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span{
+    width: 25px;
+    height: 3px;
+    background:black ;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+#menu-toggle{
+    display: none;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+#menu-toggle:checked ~ .hamburger span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (max-width:768px) {
+    .navbar{
+        padding: 0 1rem;
+        height: 60px;
+    }
+
+    .navbar .logo{
+        font-size: 1.5rem;   
+     }
+
+     .hamburger{
+        display: flex;
+     }
+
+     .navbar .nav-links{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: whitesmoke;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+     }
+
+     #menu-toggle:checked ~ .nav-links{
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+     }
+
+     .navbar .nav-links li{
+        margin: 0.5rem 0;
+        text-align: center;
+     }
+
+     .hero h1{
+        font-size: 2rem;
+     }
+}
+/*Untuk buat yang burger*/
+/*.navbar{
+        padding: 0 1rem;
+        height: 60px;
+    }
+
+.navbar .logo{
+        font-size: 1.5rem;   
+     }
+
+.hamburger{
+        display: flex;
+     }
+
+.navbar .nav-links{
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+     }
+#menu-toggle:checked ~ .nav-links{
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+     }
+
+.navbar .nav-links li{
+        margin: 0.5rem 0;
+        text-align: center;
+     }
+
+.hero h1{
+        font-size: 2rem;
+     }*/
